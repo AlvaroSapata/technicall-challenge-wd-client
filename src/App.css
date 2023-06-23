@@ -1,38 +1,158 @@
 .App {
   text-align: center;
+  font-size: 18px;
 }
+body {
+  background: linear-gradient(
+    to bottom,
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    #a2dfdf,
+    #a2dfdf,
+    #a2dfdf,
+    #a2dfdf,
+    white
+  );
+  font-family: "Fira Sans", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.PhoneList {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.SelectedPhone img {
+  width: 220px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.selectedPhoneName {
+  position: relative;
+  font-weight: bold;
+  color: #494545;
+}
+
+.PhoneList div:hover p {
+  transform: scale(1.1);
+}
+
+.selectedPhoneName::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background-color: #494545;
+  font-weight: bold;
+}
+
+.imgContainer img {
+  transition: 0.3s ease;
+}
+
+.imgContainer img:hover {
+  transform: scale(1.5);
+}
+
+.ModelAndImg p {
+  font-size: 40px;
+}
+
+.SelectedPhone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  height: 80vh;
+}
+
+.Specifications p {
+  max-width: 40vw;
+}
+
+.Specifications {
+  margin-top: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.HR {
+  width: 80vw;
+  height: 5px;
+  background: linear-gradient(to right, #a2dfdf, #ffffff, #a2dfdf);
+  border: none;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: none;
+}
+
+.buttons button img {
+  margin: 100px;
+  height: 50px;
+  width: 50px;
+  transition: 0.1s ease;
+}
+.buttons button img:hover {
+  transform: scale(1.4);
+}
+
+@media screen and (max-width: 900px) {
+  .PhoneList {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .SelectedPhone {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .ModelAndImg p {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .Specifications p {
+    max-width: 80vw;
+  }
+
+  .Specifications {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Specifications table {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .HR {
+    width: 90vw;
+  }
+  .App {
+    text-align: center;
+    font-size: 10px;
+  }
+  .buttons {
+    display: none;
   }
 }
